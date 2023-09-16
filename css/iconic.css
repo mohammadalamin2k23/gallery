@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+
+:root {
+    --canvas: 220;
+    --bg: hsl(var(--canvas), 15%, 22%);
+    --fg: hsl(var(--canvas), 39%, 95%);
+    --link: hsl(var(--canvas), 90%, 80%);
+    --linkh: hsl(150, 95%, 70%);
+    --wgt: 200;
+}
+
+body,
+html {
+    font-family: heebo, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    font-weight: var(--wgt);
+    padding: 0 0 50px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 450;
+    transition: all 0.3s ease;
+}
+a:hover,
+a:focus,
+a:active {
+    color: var(--linkh);
+}
+button {
+    background: hsl(var(--canvas), 10%, 10%);
+    color: inherit;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.25em 0.5em;
+    font-family: inherit;
+    font-size: inherit;
+}
+.social-icon {
+    stroke-width: 1.25;
+    stroke: currentColor;
+    fill: transparent;
+    background: transparent;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    z-index: 10;
+    animation: iconsLoad 10s ease both 5s;
+}
+.social-icon path {
+    fill: none;
+}
+.social-icon.twitter {
+    right: 40px;
+    animation-delay: 4s;
+}
+.social-icon.codepen {
+    bottom: 10px;
+    right: 80px;
+    width: max-content;
+    animation-delay: 3s;
+}
+@keyframes iconsLoad {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }
